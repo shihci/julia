@@ -47,7 +47,8 @@ let navDoM =document.getElementById("nav");
             navbar.classList.remove("active");
             wave[0].classList.add("active");
             wave[1].classList.add("active");
-            navMenu.classList.remove("active")
+            navMenu.classList.remove("active");
+            menuBtn.disabled = true;
 
 
             setTimeout(()=>{
@@ -56,8 +57,9 @@ let navDoM =document.getElementById("nav");
               wave[1].classList.remove("active");
 
               navMenu.classList.remove("d-block")
+              menuBtn.disabled = false;
              
-            },1800)
+            },1700)
         }
         else{
             navbar.classList.add("active");
