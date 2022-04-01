@@ -1,10 +1,14 @@
 $dark_red: #B23838
 $red: #E86565
-$font-famaily: "微軟正黑體",Roboto,Helvetica,Arial
+$pink: #FFB1B1
+$font-family: "微軟正黑體",Roboto,Helvetica,Arial
 $ft-t1: 21px
 $ft-p1: 15px
+$black: #4F4F4F
+$bg_color: linear-gradient(180deg, rgba(252, 241, 225, 0.8) 0%, rgba(255, 230, 226, 0.8) 100%)
+
 *
-    font: $font-famaily
+    font-family: $font-family
     font-size: 16px
 .fixed
     position: fixed
@@ -20,6 +24,21 @@ $ft-p1: 15px
     padding: 16px
     color: white
     text-align: center
+//.work_container start
+.work_container
+    width: 100%
+    margin-right: auto
+    margin-left: auto
+    padding-left: 16px
+    padding-right: 16px
+    @media screen and ( min-width: 768px )
+        padding-left: 44px
+        padding-right: 44px
+    @media screen and ( min-width: 1280px )
+        max-width: 1120px
+        padding: 0
+        
+///work_container end
 .work_header,.work_header img
     width: 100%
 .work_header img
@@ -33,16 +52,28 @@ $ft-p1: 15px
 .work_title
     margin-top: 50px
     margin-bottom: 50px
+    font-size: 0
     font-size: $ft-t1
-    font-weight: bold
+    font-weight: 400
+    color: $black
+  
+
 .work_body
     
-    background: linear-gradient(180deg, rgba(252, 241, 225, 0.8) 0%, rgba(255, 230, 226, 0.8) 100%)
+    background: $bg_color
     padding-bottom: 48px
 .work_item
     font-size: 0
     margin-top: 10px
     margin-bottom: 10px
+    cursor: pointer
+    
+    @media screen and ( min-width: 576px )
+        padding-left: 10px //0401
+        padding-right: 10px //0401
+    @media screen and ( min-width: 1280px )
+        padding-left: 10px
+        padding-right: 10px
     &:hover .cloudT
         top: -10px
         right: -10px
@@ -56,15 +87,17 @@ $ft-p1: 15px
         opacity: 1
     &:hover .pink_line
         width: 100%
-.work_pict
+    &:hover .work_pict
+        background: rgba(255, 255, 255, 0.4)
+.work_pict 
     position: relative
     font-size: 16px
     margin-bottom: 32px
     width: 100%
     border: 1px solid #fff
-    background-color: rgba(255,255,255,0.7)
-    overflow: hidden
-    
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.7) 100%)
+    overflow: hidden     
+    transition: 0.5s
     .icon_pc
         position: absolute
         top: 60%
@@ -75,18 +108,19 @@ $ft-p1: 15px
         z-index: 4
         p
             display: inline-block
+            
             color: #fff
 
     .cloudT,.cloudB
         position: absolute
         z-index: 3
     .cloudT
-        top: -30px
+        top: -40px
         right: -30px
         transition: 0.7s
     .cloudB
-        left: -30px
-        bottom: -20px
+        left: -70px
+        bottom: -50px
         transition: 0.7s
     .pink_block
         position: absolute
@@ -105,6 +139,9 @@ $ft-p1: 15px
     margin-top: 30px
     margin-bottom: 10px
     font-size: 16px
+    letter-spacing: 0.2em
+    color: $black
+    
 .pink_line
     text-align: left
     display: inline-block
@@ -123,6 +160,16 @@ $ft-p1: 15px
         width: 100%
         padding-top: 4px
         margin-top: -8px
+        text-align: center
+        display: block !important
+        
+@media screen and ( min-width: 992px)
+    .logo_bar
+        text-align: left
+    
+        
+
+            
 //menu
 #Menubox
     position: relative
@@ -300,4 +347,42 @@ $ft-p1: 15px
     right: 0
     padding: 0
 
-//menu_nav
+//平面設計
+.disign_2D_body
+    background: $bg_color
+.col-2D-pict
+    width: 100%
+    overflow-y: scroll
+    img
+        width: 100%
+    @media screen and ( min-width: 1280px )
+        width: calc( 100% - 380px )
+        height: calc(100vh - 55px )
+            
+.col-2d-context
+    width: 100%
+    overflow-y: scroll
+    padding-top: 40px
+    background-color: white
+    padding-bottom: 100px
+    @media screen and ( min-width: 1280px )
+        width: 380px
+        padding-top: 110px
+        height: calc(100vh - 55px )
+    h2
+        font-size: 21px
+        font-weight: 600
+    p
+        margin-top: 30px
+        margin-bottom: 30px
+    a
+        text-decoration: none
+        background-color: $pink
+        padding: 6px 12px
+        border-radius: 100px
+        font-size: $ft-p1
+        border: 0px
+        line-height: 18px
+        letter-spacing: 0.2em
+        color: white
+    
