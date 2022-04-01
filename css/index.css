@@ -529,6 +529,7 @@
 }
 
 .col-2D-pict {
+  padding: 0;
   width: 100%;
   overflow-y: scroll;
 }
@@ -539,7 +540,7 @@
 
 @media screen and (min-width: 1280px) {
   .col-2D-pict {
-    width: calc( 100% - 380px);
+    width: calc( 100% - 420px);
     height: calc(100vh - 55px);
   }
 }
@@ -548,13 +549,15 @@
   width: 100%;
   overflow-y: scroll;
   padding-top: 40px;
-  background-color: white;
+  padding-left: 30px;
+  padding-right: 30px;
   padding-bottom: 100px;
+  background-color: white;
 }
 
 @media screen and (min-width: 1280px) {
   .col-2d-context {
-    width: 380px;
+    width: 420px;
     padding-top: 110px;
     height: calc(100vh - 55px);
   }
