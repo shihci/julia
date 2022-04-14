@@ -62,13 +62,13 @@ let navDoM =document.getElementById("nav");
         }
 
         let animItem = bodymovin.loadAnimation({
-            wrapper: menuBtn,
-            animType: 'svg',
-            loop: false,
-            autoplay: false,
-            path: 'https://assets9.lottiefiles.com/packages/lf20_cwolgngu.json'
+        wrapper: menuBtn,
+        animType: 'svg',
+        loop: false,
+        autoplay: false,
+        path: 'https://assets9.lottiefiles.com/packages/lf20_cwolgngu.json'
         });
-       
+        
         
     }))
 
