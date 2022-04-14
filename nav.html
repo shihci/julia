@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+    <link href="css/index.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="navbar">
+        <div class="logo_bar container">
+            <img src="img/logo.png" alt="">
+        </div>
+        <div id="Menubox">
+
+            <div id="box" class='box'>
+                <div class='wave -one'></div>
+                <!-- <div class='wave -two'></div> -->
+                <div class='wave -three'></div>
+              </div>
+
+            <div id="navMenu" class="navMenu">
+                <ul id="navList">
+                    <li>網頁設計</li>
+                    <li class="active">平面設計</li>
+                    <li>插畫創作</li>
+                    <li>畢業製作</li>
+                </ul>
+            </div>
+        </div>
+        <div id="menuBtn" class="menu">
+            <!-- <img src="img/menu.png" alt=""> -->
+        </div>
+    </div>
+
+    
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.6.5/lottie.min.js"></script>
+<script>
+    let menuBtn = document.getElementById("menuBtn");
+    let navbar = document.getElementById("navMenu");
+    let box = document.getElementById("box")
+    let wave=document.getElementsByClassName("wave");
+    
+    let navMenu=document.getElementById("navMenu")
+    menuBtn.addEventListener("click",()=>{
+        if(navbar.classList.contains("active")){
+            navbar.classList.remove("active");
+            wave[0].classList.add("active");
+            wave[1].classList.add("active");
+            navMenu.classList.remove("active")
+            animItem.playSegments([0,60],true);
+
+
+            setTimeout(()=>{
+              box.classList.remove("open");
+              wave[0].classList.remove("active");
+              wave[1].classList.remove("active");
+
+              navMenu.classList.remove("open")
+             
+            },1800)
+        }
+        else{
+            animItem.playSegments([60,0],true);
+            navbar.classList.add("active");
+            box.classList.add("open");
+            
+            navMenu.classList.add("active")
+            navMenu.classList.add("open")
+        }
+        
+    })
+
+
+    let navList = document.getElementById("navList").children;
+        console.log(navList);
+        for(i=0;i<navList.length;i++){
+            navList[i].addEventListener("click",(e)=>{
+                for(j=0;j<navList.length;j++){
+                    navList[j].classList.remove("active")
+                }
+                 e.target.classList.add("active")
+            })
+            
+
+        }
+
+        
+
+
+    // let svgContainer = document.getElementById('menuBtn');
+    // var home = document.getElementById("home");
+    let animItem = bodymovin.loadAnimation({
+    wrapper: menuBtn,
+    animType: 'svg',
+    loop: false,
+    autoplay: false,
+    path: 'https://assets9.lottiefiles.com/packages/lf20_cwolgngu.json'
+    });
+    
+    // svgContainer.onclick = function(){
+    //     if(navMenu.classList.contains("active")){
+    //         animItem.playSegments([0,60],true);
+    //         console.log("OK")
+    //     }
+    //     else{
+    //         animItem.playSegments([60,0],true);
+    //     }
+        
+       
+    // }
+</script>
+
+    
+
+
+</html>

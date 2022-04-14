@@ -7,83 +7,67 @@ let navDoM =document.getElementById("nav");
     axios.all([getNav()]).then(axios.spread(function(Nav1){
         navDoM.innerHTML = Nav1.data;
         
-        // let menuBtn = document.getElementById("menuBtn");
-        // let navbar = document.getElementById("navMenu");
-        // if(menuBtn){
-        //     menuBtn.addEventListener("click",()=>{
-        //         if(navbar.classList.contains("active")){
-        //             navbar.classList.remove("active");
-        //         }
-        //         else{
-        //             navbar.classList.add("active");
-        //         }
-                
-        //     });
-        // }
-        // else{
-        //     console.log("-1")
-        // }
         
-        // let navList = document.getElementById("navList").children;
-        //     console.log(navList);
-        //     for(i=0;i<navList.length;i++){
-        //         navList[i].addEventListener("click",(e)=>{
-        //             for(j=0;j<navList.length;j++){
-        //                 navList[j].classList.remove("active")
-        //             }
-        //             e.target.classList.add("active")
-        //         })
-                
-
-        //     }
         let menuBtn = document.getElementById("menuBtn");
-    let navbar = document.getElementById("navMenu");
-    let box = document.getElementById("box")
-    let wave=document.getElementsByClassName("wave");
+        let navbar = document.getElementById("navMenu");
+        let box = document.getElementById("box")
+        let wave=document.getElementsByClassName("wave");
     
-    let navMenu=document.getElementById("navMenu")
-    menuBtn.addEventListener("click",()=>{
-        if(navbar.classList.contains("active")){
-            navbar.classList.remove("active");
-            wave[0].classList.add("active");
-            wave[1].classList.add("active");
-            navMenu.classList.remove("active");
-            menuBtn.disabled = true;
+        let navMenu=document.getElementById("navMenu")
+        menuBtn.addEventListener("click",()=>{
+            if(navbar.classList.contains("active")){
+                navbar.classList.remove("active");
+                wave[0].classList.add("active");
+                wave[1].classList.add("active");
+                navMenu.classList.remove("active");
+                animItem.playSegments([0,60],true);
+
+                menuBtn.disabled = true;
 
 
-            setTimeout(()=>{
-              box.classList.remove("d-block");
-              wave[0].classList.remove("active");
-              wave[1].classList.remove("active");
 
-              navMenu.classList.remove("d-block")
-              menuBtn.disabled = false;
-             
-            },1700)
-        }
-        else{
-            navbar.classList.add("active");
-            box.classList.add("d-block");
+                setTimeout(()=>{
+                box.classList.remove("d-block");
+                wave[0].classList.remove("active");
+                wave[1].classList.remove("active");
+
+                navMenu.classList.remove("d-block")
+                menuBtn.disabled = false;
+                
+                },1700)
+            }
+            else{
+                navbar.classList.add("active");
+                box.classList.add("d-block");
+                
+                navMenu.classList.add("active");
+                navMenu.classList.add("d-block");
+                animItem.playSegments([60,0],true);
+            }
             
-            navMenu.classList.add("active")
-            navMenu.classList.add("d-block")
-        }
+        })
+
+
+        let navList = document.getElementById("navList").children;
         
-    })
-
-
-    let navList = document.getElementById("navList").children;
-        console.log(navList);
         for(i=0;i<navList.length;i++){
             navList[i].addEventListener("click",(e)=>{
                 for(j=0;j<navList.length;j++){
                     navList[j].classList.remove("active")
                 }
-                 e.target.classList.add("active")
+                e.target.classList.add("active")
             })
             
 
         }
+
+        let animItem = bodymovin.loadAnimation({
+            wrapper: menuBtn,
+            animType: 'svg',
+            loop: false,
+            autoplay: false,
+            path: 'https://assets9.lottiefiles.com/packages/lf20_cwolgngu.json'
+        });
        
         
     }))

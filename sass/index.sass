@@ -1,4 +1,5 @@
-$dark_red: #B23838
+$dark_red: #CB5454
+$dark_red2: #CD0000
 $red: #E86565
 $pink: #FFB1B1
 $font-family: "微軟正黑體",Roboto,Helvetica,Arial
@@ -6,7 +7,12 @@ $ft-t1: 21px
 $ft-p1: 15px
 $black: #4F4F4F
 $bg_color: linear-gradient(180deg, rgba(252, 241, 225, 0.8) 0%, rgba(255, 230, 226, 0.8) 100%)
-
+#svgContainer
+    border: 1px solid #000
+    width: 25px
+    height: 25px
+    background-color: $dark_red
+    
 *
     font-family: $font-family
     font-size: 16px
@@ -38,7 +44,13 @@ $bg_color: linear-gradient(180deg, rgba(252, 241, 225, 0.8) 0%, rgba(255, 230, 2
         max-width: 1120px
         padding: 0
         
-///work_container end
+
+
+.Lollipop
+    -moz-transform: scaleX(-1)
+    -webkit-transform: scaleX(-1)
+    -o-transform: scaleX(-1)
+    transform: scaleX(-1)
 .work_header,.work_header img
     width: 100%
 .work_header img
@@ -56,7 +68,7 @@ $bg_color: linear-gradient(180deg, rgba(252, 241, 225, 0.8) 0%, rgba(255, 230, 2
     font-size: $ft-t1
     font-weight: 400
     color: $black
-  
+    letter-spacing: 0.2em
 
 .work_body
     
@@ -89,6 +101,7 @@ $bg_color: linear-gradient(180deg, rgba(252, 241, 225, 0.8) 0%, rgba(255, 230, 2
         width: 100%
     &:hover .work_pict
         background: rgba(255, 255, 255, 0.4)
+///work_container end
 .work_pict 
     position: relative
     font-size: 16px
@@ -128,7 +141,7 @@ $bg_color: linear-gradient(180deg, rgba(252, 241, 225, 0.8) 0%, rgba(255, 230, 2
         margin-left: 20px
         width: calc( 100% - 40px )
         height: calc( 100% - 40px)
-        background: rgba(254, 171, 171, 0.3)
+        background: rgba(254, 171, 171, 0.5)
         opacity: 0
         z-index: 2
     .main_pic
@@ -232,10 +245,8 @@ $bg_color: linear-gradient(180deg, rgba(252, 241, 225, 0.8) 0%, rgba(255, 230, 2
                 &.active
                     background: rgba(255, 238, 238, 0.5)
                     box-shadow: inset 0px 0px 16px rgba(237, 170, 170, 0.4)
-                a
-                    padding: 12px 0px
-                    color: inherit
-                    text-decoration: none
+                &:hover
+                    color: $dark_red2
 
     @media screen and ( max-width: 992px )
         display: none
@@ -346,8 +357,29 @@ $bg_color: linear-gradient(180deg, rgba(252, 241, 225, 0.8) 0%, rgba(255, 230, 2
     top: 0
     right: 0
     padding: 0
+    width: 60px
+    height: 60px
+    background-color: $dark_red
+//work_illust
+.work_illust
+    position: relative
+    font-size: 16px
+    margin-bottom: 32px
+    width: 320px
+    height: 320px
+    overflow: hidden    
+    transform: scale(1,1) 
+    transition: 0.5s
+    &:hover img
+       transform: scale(1.2,1.2) 
+    img
+        object-fit: contain
+        width: 100%
+        height: 100%
+        transition: 0.5s
 
-//平面設計
+
+//平面設計-內頁 二郎神
 .disign_2D_body
     background: $bg_color
 .col-2D-pict
