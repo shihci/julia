@@ -52,6 +52,7 @@
             wave[0].classList.add("active");
             wave[1].classList.add("active");
             navMenu.classList.remove("active")
+            animItem.setSpeed(1)
             animItem.playSegments([0,60],true);
 
 
@@ -65,7 +66,10 @@
             },1800)
         }
         else{
-            animItem.playSegments([60,10],true);
+            animItem.setSpeed(3)
+            animItem.playSegments([60,40],true);
+            animItem.setSpeed(2)
+            animItem.playSegments([40,0],true);
             navbar.classList.add("active");
             box.classList.add("open");
             
@@ -101,6 +105,8 @@
     autoplay: false,
     path: 'https://assets9.lottiefiles.com/packages/lf20_cwolgngu.json'
     });
+    animItem.goToAndStop(59,true);
+
     
     // svgContainer.onclick = function(){
     //     if(navMenu.classList.contains("active")){

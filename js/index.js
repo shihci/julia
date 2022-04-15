@@ -20,8 +20,7 @@ let navDoM =document.getElementById("nav");
                 wave[0].classList.add("active");
                 wave[1].classList.add("active");
                 navMenu.classList.remove("active");
-                animItem.playSegments([0,60],true);
-
+                ScreenV1();
                 menuBtn.disabled = true;
 
 
@@ -42,10 +41,11 @@ let navDoM =document.getElementById("nav");
                 
                 navMenu.classList.add("active");
                 navMenu.classList.add("d-block");
-                animItem.playSegments([60,0],true);
+                ScreenV2();
             }
             
-        })
+        });
+        
 
 
         let navList = document.getElementById("navList").children;
@@ -62,12 +62,51 @@ let navDoM =document.getElementById("nav");
         }
 
         let animItem = bodymovin.loadAnimation({
-        wrapper: menuBtn,
-        animType: 'svg',
-        loop: false,
-        autoplay: false,
-        path: 'https://assets9.lottiefiles.com/packages/lf20_cwolgngu.json'
+            wrapper: menuBtn,
+            animType: 'svg',
+            loop: false,
+            autoplay: false,
+            path: 'https://assets9.lottiefiles.com/packages/lf20_cwolgngu.json'
         });
+
+        //  判斷視窗寬度
+        let WindowsW = window.innerWidth;
+        function reset(){
+            if(WindowsW < 992){
+                animItem.goToAndStop(0,true);
+            }else{
+                animItem.goToAndStop(59,true);
+            }
+        }
+        reset();
+        function ScreenV1(){
+            if(WindowsW < 992){
+                animItem.setSpeed(3)
+                animItem.playSegments([60,40],true);
+                animItem.setSpeed(2)
+                animItem.playSegments([40,0],true);
+                console.log("1")
+            }else{
+                animItem.setSpeed(1.5)
+                animItem.playSegments([0,60],true);
+                console.log("2")
+            }
+        }
+        function ScreenV2(){
+            if(WindowsW < 992){
+                animItem.setSpeed(1.5)
+                animItem.playSegments([0,60],true);
+                console.log("4")
+
+            }else{
+                animItem.setSpeed(3)
+                animItem.playSegments([60,40],true);
+                animItem.setSpeed(2)
+                animItem.playSegments([40,0],true);
+                console.log("3")
+                
+            }
+        }
         
         
     }))
