@@ -76,7 +76,7 @@
 <script>
     let webData =document.getElementById("webData");
     let html="";
-     axios.get('/api/webData.json').then(res=>{
+     axios.get('./api/webData.json').then(res=>{
         console.log(res.data)
         res.data.forEach(item => {
             html+=`<div class="col-12 col-sm-6 col-lg-4 work_item" onclick="window.location='${item.url}';">
