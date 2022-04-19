@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>插畫設計</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+    <link href="css/index.css" rel="stylesheet">
+</head>
+
+<body>
+     <div class="fixed">
+        <div id="nav">
+        <!--這是導覽列 -->
+        </div>
+    </div>
+    
+    <div class="work_header">
+        <img src="img/work_header.png" alt="">
+    </div>
+    <div id="svgContainer"></div>
+    <div class="work_body">
+        <div class="work_container">
+            <div class="row text-center">
+                <h1 class="work_title">
+                    <img src="img/Lollipop.svg">
+                    插畫設計
+                    <img class="Lollipop" src="img/Lollipop.svg">
+                </h1>
+
+                <div id="webData" class="row text-center"></div>
+                <div class="col-12 col-sm-6 col-lg-4 work_item">
+                    <div class="work_illust">
+                        <img src="img/illust_panyu.png" alt="">
+                    </div>
+                    <div class="text-center">
+                        <h3 class="work_p">BNI design</h3>
+                        <div class="pink_line">
+
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="col-12 col-sm-6 col-lg-4 work_item">
+                    <div class="work_illust">
+                        <img src="img/illust_pic1.png" alt="">
+                    </div>
+                    <div class="text-center">
+                        <h3 class="work_p">BNI design</h3>
+                        <div class="pink_line">
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-lg-4 work_item">
+                    <div class="work_illust">
+                        <img src="img/illust_panyu.png" alt="">
+                    </div>
+                    <div class="text-center">
+                        <h3 class="work_p">BNI design</h3>
+                        <div class="pink_line">
+
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="col-12 col-sm-6 col-lg-4 work_item">
+                    <div class="work_illust">
+                        <img src="img/illust_pic1.png" alt="">
+                    </div>
+                    <div class="text-center">
+                        <h3 class="work_p">BNI design</h3>
+                        <div class="pink_line">
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-lg-4 work_item">
+                    <div class="work_illust">
+                        <img src="img/illust_panyu.png" alt="">
+                    </div>
+                    <div class="text-center">
+                        <h3 class="work_p">BNI design</h3>
+                        <div class="pink_line">
+
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="col-12 col-sm-6 col-lg-4 work_item">
+                    <div class="work_illust">
+                        <img src="img/illust_pic1.png" alt="">
+                    </div>
+                    <div class="text-center">
+                        <h3 class="work_p">BNI design</h3>
+                        <div class="pink_line">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+
+
+    </div>
+
+    <div id="footer">
+        Copyright © 2022 Julia. All rights reserved
+    </div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
+    crossorigin="anonymous"></script>
+<script src="js/bootstrap.min.js" crossorigin="anonymous"></script>
+<script src="js/axios.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.6.5/lottie.min.js"></script>
+<script src="js/index.js"></script>
+<script>
+    let webData =document.getElementById("webData");
+    let html="";
+     axios.get('/api/illust.json').then(res=>{
+        console.log(res.data)
+        res.data.forEach(item => {
+            html+=`<div class="col-12 col-sm-6 col-lg-4 work_item" onclick="window.location='${item.url}';">
+                    <div class="work_illust">
+                        <img src="img/${item.img}" alt="">
+                    </div>
+                    <div class="text-center">
+                        <h3 class="work_p">${item.title}</h3>
+                        <div class="pink_line">
+
+                        </div>
+                    </div>
+                    
+                </div>`
+        });
+        webData.innerHTML=html;
+     })
+</script>
+
+
+</body>
+
+</html>

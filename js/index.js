@@ -22,9 +22,7 @@ let navDoM =document.getElementById("nav");
                 navMenu.classList.remove("active");
                 ScreenV1();
                 menuBtn.disabled = true;
-
-
-
+                
                 setTimeout(()=>{
                 box.classList.remove("d-block");
                 wave[0].classList.remove("active");
