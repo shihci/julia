@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>插畫設計</title>
+    <title>網頁設計</title>
     <link href="css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
     <link href="css/index.css" rel="stylesheet">
 </head>
@@ -20,87 +20,28 @@
     <div class="work_header">
         <img src="img/work_header.png" alt="">
     </div>
-    <div id="svgContainer"></div>
     <div class="work_body">
-        <div class="work_container">
+        <div class="work_container work_body">
             <div class="row text-center">
                 <h1 class="work_title">
                     <img src="img/Lollipop.svg">
-                    插畫設計
+                    專案
                     <img class="Lollipop" src="img/Lollipop.svg">
                 </h1>
-
-                <div id="webData" class="row text-center"></div>
-                <div class="col-12 col-sm-6 col-lg-4 work_item">
-                    <div class="work_illust">
-                        <img src="img/illust_panyu.png" alt="">
-                    </div>
-                    <div class="text-center">
-                        <h3 class="work_p">BNI design</h3>
-                        <div class="pink_line">
-
-                        </div>
-                    </div>
-                    
-                </div>
-                <div class="col-12 col-sm-6 col-lg-4 work_item">
-                    <div class="work_illust">
-                        <img src="img/illust_pic1.png" alt="">
-                    </div>
-                    <div class="text-center">
-                        <h3 class="work_p">BNI design</h3>
-                        <div class="pink_line">
-
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-sm-6 col-lg-4 work_item">
-                    <div class="work_illust">
-                        <img src="img/illust_panyu.png" alt="">
-                    </div>
-                    <div class="text-center">
-                        <h3 class="work_p">BNI design</h3>
-                        <div class="pink_line">
-
-                        </div>
-                    </div>
-                    
-                </div>
-                <div class="col-12 col-sm-6 col-lg-4 work_item">
-                    <div class="work_illust">
-                        <img src="img/illust_pic1.png" alt="">
-                    </div>
-                    <div class="text-center">
-                        <h3 class="work_p">BNI design</h3>
-                        <div class="pink_line">
-
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-sm-6 col-lg-4 work_item">
-                    <div class="work_illust">
-                        <img src="img/illust_panyu.png" alt="">
-                    </div>
-                    <div class="text-center">
-                        <h3 class="work_p">BNI design</h3>
-                        <div class="pink_line">
-
-                        </div>
-                    </div>
-                    
-                </div>
-                <div class="col-12 col-sm-6 col-lg-4 work_item">
-                    <div class="work_illust">
-                        <img src="img/illust_pic1.png" alt="">
-                    </div>
-                    <div class="text-center">
-                        <h3 class="work_p">BNI design</h3>
-                        <div class="pink_line">
-
-                        </div>
-                    </div>
-                </div>
             </div>
+
+            <div id="project" class="row text-center">
+            </div>
+            <div class="row text-center">
+                <h1 class="work_title">
+                    <img src="img/Lollipop.svg">
+                    專案
+                    <img class="Lollipop" src="img/Lollipop.svg">
+                </h1>
+            </div>
+
+                <div id="poster" class="row text-center">
+                </div>
         </div>
         
 
@@ -118,14 +59,30 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.6.5/lottie.min.js"></script>
 <script src="js/index.js"></script>
 <script>
-    let webData =document.getElementById("webData");
-    let html="";
-     axios.get('./api/illust.json').then(res=>{
+    let project =document.getElementById("project");
+    let ProjectHtml="";
+
+    let poster = document.getElementById("poster");
+    let PosterHtml="";
+
+    axios.get('./api/webIllust.json').then(res=>{
         console.log(res.data)
-        res.data.forEach(item => {
-            html+=`<div class="col-12 col-sm-6 col-lg-4 work_item" onclick="window.location='${item.url}';">
-                    <div class="work_illust">
-                        <img src="img/${item.img}" alt="">
+        res.data.project.forEach(item => {
+            ProjectHtml+=`<div class="col-12 col-sm-6 col-lg-4 work_item" onclick="window.location='${item.url}';">
+                    <div class="work_pict">
+                        <div class="cloudT">
+                            <img src="img/cloud_top.png" alt="">
+                        </div>
+                        <div class="cloudB">
+                            <img src="img/cloud_bottom.png" alt="">
+                        </div>
+                        <div class="pink_block"></div>
+                        <div class="icon_pc">
+                            <img src="img/icon_pc.png" alt="">
+                            <p>網頁設計</p>
+                        </div>
+                        
+                        <img class="main_pic" src="img/${item.img}" alt="">
                     </div>
                     <div class="text-center">
                         <h3 class="work_p">${item.title}</h3>
@@ -136,11 +93,42 @@
                     
                 </div>`
         });
-        webData.innerHTML=html;
+        project.innerHTML=ProjectHtml;
+
+        res.data.poster.forEach(item => {
+            PosterHtml+=`
+            <div class="col-12 col-sm-6 col-lg-4 work_item" onclick="window.location='${item.url}';">
+                    <div class="work_pict">
+                        <div class="cloudT">
+                            <img src="img/cloud_top.png" alt="">
+                        </div>
+                        <div class="cloudB">
+                            <img src="img/cloud_bottom.png" alt="">
+                        </div>
+                        <div class="pink_block"></div>
+                        <div class="icon_pc">
+                            <img src="img/icon_pc.png" alt="">
+                            <p>網頁設計</p>
+                        </div>
+                        
+                        <img class="main_pic" src="img/${item.img}" alt="">
+                    </div>
+                    <div class="text-center">
+                        <h3 class="work_p">${item.title}</h3>
+                        <div class="pink_line">
+
+                        </div>
+                    </div>
+                    
+                </div>`
+        });
+        poster.innerHTML=PosterHtml;
+
+        
      })
+
+
+    
 </script>
-
-
-</body>
 
 </html>

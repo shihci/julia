@@ -33,6 +33,7 @@
             <div id="webData" class="row text-center">
 
             </div>
+            
         </div>
         
 
@@ -49,28 +50,7 @@
 <script src="js/axios.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.6.5/lottie.min.js"></script>
 <script src="js/index.js"></script>
-<script>
-    let webData =document.getElementById("webData");
-    let html="";
-     axios.get('./api/webDraw.json').then(res=>{
-        console.log(res.data)
-        res.data.forEach(item => {
-            html+=`<div class="col-12 col-sm-6 col-lg-4 work_item" onclick="window.location='${item.url}';">
-                    <div class="work_illust">
-                        <img src="img/${item.img}" alt="">
-                    </div>
-                    <div class="text-center">
-                        <h3 class="work_p">${item.title}</h3>
-                        <div class="pink_line">
 
-                        </div>
-                    </div>
-                    
-                </div>`
-        });
-        webData.innerHTML=html;
-     })
-</script>
 
 
 </body>

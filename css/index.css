@@ -237,7 +237,7 @@
 #Menubox {
   position: relative;
   width: 100%;
-  height: calc( 100vh - 50px);
+  height: 0px;
   background-color: transparent;
   overflow: hidden;
 }
@@ -249,6 +249,16 @@
     right: 0%;
     overflow: hidden;
     width: auto;
+    height: 80px;
+  }
+}
+
+#Menubox.active {
+  height: calc( 100vh - 50px);
+}
+
+@media screen and (min-width: 992px) {
+  #Menubox.active {
     height: 80px;
   }
 }
@@ -543,6 +553,7 @@
           transform: scale(1, 1);
   -webkit-transition: 0.5s;
   transition: 0.5s;
+  display: inline-block;
 }
 
 .work_illust:hover img {

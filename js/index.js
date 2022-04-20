@@ -9,21 +9,24 @@ let navDoM =document.getElementById("nav");
         
         
         let menuBtn = document.getElementById("menuBtn");
-        let navbar = document.getElementById("navMenu");
         let box = document.getElementById("box")
         let wave=document.getElementsByClassName("wave");
     
-        let navMenu=document.getElementById("navMenu")
+        let navMenu=document.getElementById("navMenu");
+        let Menubox=document.getElementById("Menubox")
         menuBtn.addEventListener("click",()=>{
-            if(navbar.classList.contains("active")){
-                navbar.classList.remove("active");
+            if(navMenu.classList.contains("active")){
+               
+                navMenu.classList.remove("active");
                 wave[0].classList.add("active");
                 wave[1].classList.add("active");
-                navMenu.classList.remove("active");
+                
+
                 ScreenV1();
                 menuBtn.disabled = true;
                 
                 setTimeout(()=>{
+                Menubox.classList.remove("active")
                 box.classList.remove("d-block");
                 wave[0].classList.remove("active");
                 wave[1].classList.remove("active");
@@ -34,7 +37,7 @@ let navDoM =document.getElementById("nav");
                 },1700)
             }
             else{
-                navbar.classList.add("active");
+                Menubox.classList.add("active")
                 box.classList.add("d-block");
                 
                 navMenu.classList.add("active");
