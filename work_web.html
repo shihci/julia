@@ -57,7 +57,7 @@
         console.log(res.data)
         res.data.forEach(item => {
             html+=`
-            <div class="col-12 col-sm-6 col-lg-4 work_item" onclick="window.location='${item.url}';">
+            <div class="col-12 col-sm-6 col-lg-4 work_item" onclick="window.location='${item.id}';">
                     <div class="work_pict">
                         <div class="cloudT">
                             <img src="img/cloud_top.png" alt="">
@@ -71,7 +71,7 @@
                             <p>網頁設計</p>
                         </div>
                         
-                        <img class="main_pic" src="img/${item.img}" alt="">
+                        <img class="main_pic" src="img/Web/cover/${item.img}" alt="">
                     </div>
                     <div class="text-center">
                         <h3 class="work_p">${item.title}</h3>

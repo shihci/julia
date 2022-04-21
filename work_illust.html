@@ -29,9 +29,9 @@
                     <img class="Lollipop" src="img/Lollipop.svg">
                 </h1>
             </div>
-
             <div id="project" class="row text-center">
             </div>
+
             <div class="row text-center">
                 <h1 class="work_title">
                     <img src="img/Lollipop.svg">
@@ -40,8 +40,19 @@
                 </h1>
             </div>
 
-                <div id="poster" class="row text-center">
-                </div>
+            <div id="graphic" class="row text-center">
+            </div>
+
+            <div class="row text-center">
+                <h1 class="work_title">
+                    <img src="img/Lollipop.svg">
+                    專案
+                    <img class="Lollipop" src="img/Lollipop.svg">
+                </h1>
+            </div>
+
+            <div id="graphicCreat" class="row text-center">
+            </div>
         </div>
         
 
@@ -62,13 +73,16 @@
     let project =document.getElementById("project");
     let ProjectHtml="";
 
-    let poster = document.getElementById("poster");
-    let PosterHtml="";
+    let graphic = document.getElementById("graphic");
+    let graphicHtml="";
 
-    axios.get('./api/webIllust.json').then(res=>{
+    let graphicCreat = document.getElementById("graphicCreat");
+    let graphicCreatHtml="";
+
+    axios.get('./api/webGraphic.json').then(res=>{
         console.log(res.data)
         res.data.project.forEach(item => {
-            ProjectHtml+=`<div class="col-12 col-sm-6 col-lg-4 work_item" onclick="window.location='${item.url}';">
+            ProjectHtml+=`<div class="col-12 col-sm-6 col-lg-4 work_item" onclick="window.location='${item.id}';">
                     <div class="work_pict">
                         <div class="cloudT">
                             <img src="img/cloud_top.png" alt="">
@@ -82,7 +96,7 @@
                             <p>網頁設計</p>
                         </div>
                         
-                        <img class="main_pic" src="img/${item.img}" alt="">
+                        <img class="main_pic" src="img/Graphic/cover/${item.img}" alt="">
                     </div>
                     <div class="text-center">
                         <h3 class="work_p">${item.title}</h3>
@@ -95,9 +109,10 @@
         });
         project.innerHTML=ProjectHtml;
 
-        res.data.poster.forEach(item => {
-            PosterHtml+=`
-            <div class="col-12 col-sm-6 col-lg-4 work_item" onclick="window.location='${item.url}';">
+        //graphic
+        res.data.graphic.forEach(item => {
+            graphicHtml+=`
+            <div class="col-12 col-sm-6 col-lg-4 work_item" onclick="window.location='${item.id}';">
                     <div class="work_pict">
                         <div class="cloudT">
                             <img src="img/cloud_top.png" alt="">
@@ -111,7 +126,7 @@
                             <p>網頁設計</p>
                         </div>
                         
-                        <img class="main_pic" src="img/${item.img}" alt="">
+                        <img class="main_pic" src="img/Graphic/cover/${item.img}" alt="">
                     </div>
                     <div class="text-center">
                         <h3 class="work_p">${item.title}</h3>
@@ -122,7 +137,24 @@
                     
                 </div>`
         });
-        poster.innerHTML=PosterHtml;
+        graphic.innerHTML=graphicHtml;
+
+        //graphicCreat
+        res.data.graphicCreat.forEach(item => {
+            graphicCreatHtml+=`<div class="col-12 col-sm-6 col-lg-4 work_item" onclick="window.location='${item.url}';">
+                    <div class="work_illust">
+                        <img src="img/Graphic/cover/${item.img}" alt="">
+                    </div>
+                    <div class="text-center">
+                        <h3 class="work_p">${item.title}</h3>
+                        <div class="pink_line">
+
+                        </div>
+                    </div>
+                    
+                </div>`
+        });
+        graphicCreat.innerHTML=graphicCreatHtml;
 
         
      })

@@ -26,11 +26,31 @@
             <div class="row text-center">
                 <h1 class="work_title">
                     <img src="img/Lollipop.svg">
-                    插畫設計
+                    插畫設計-hippo
                     <img class="Lollipop" src="img/Lollipop.svg">
                 </h1>
             </div>
-            <div id="webData" class="row text-center">
+            <div id="hippo" class="row text-center">
+
+            </div>
+            <div class="row text-center">
+                <h1 class="work_title">
+                    <img src="img/Lollipop.svg">
+                    插畫設計-penDraw
+                    <img class="Lollipop" src="img/Lollipop.svg">
+                </h1>
+            </div>
+            <div id="penDraw" class="row text-center">
+
+            </div>
+            <div class="row text-center">
+                <h1 class="work_title">
+                    <img src="img/Lollipop.svg">
+                    插畫設計-paint
+                    <img class="Lollipop" src="img/Lollipop.svg">
+                </h1>
+            </div>
+            <div id="paint" class="row text-center">
 
             </div>
         </div>
@@ -50,14 +70,21 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.6.5/lottie.min.js"></script>
 <script src="js/index.js"></script>
 <script>
-    let webData =document.getElementById("webData");
-    let html="";
+
+    //hippo
+    let hippo =document.getElementById("hippo");
+    let hippoHtml="";
+    let penDraw =document.getElementById("penDraw");
+    let penDrawHtml="";
+    let paint =document.getElementById("paint");
+    let paintHtml="";
+    
      axios.get('./api/webDraw.json').then(res=>{
         console.log(res.data)
-        res.data.forEach(item => {
-            html+=`<div class="col-12 col-sm-6 col-lg-4 work_item" onclick="window.location='${item.url}';">
+        res.data.hippo.forEach(item => {
+            hippoHtml+=`<div class="col-12 col-sm-6 col-lg-4 work_item" onclick="window.location='${item.url}';">
                     <div class="work_illust">
-                        <img src="img/${item.img}" alt="">
+                        <img src="img/drawWork/hippo/${item.img}" alt="">
                     </div>
                     <div class="text-center">
                         <h3 class="work_p">${item.title}</h3>
@@ -68,11 +95,55 @@
                     
                 </div>`
         });
-        webData.innerHTML=html;
+        hippo.innerHTML=hippoHtml;
+
+    //penDraw
+    
+        res.data.penDraw.forEach(item => {
+            penDrawHtml+=`<div class="col-12 col-sm-6 col-lg-4 work_item" onclick="window.location='${item.url}';">
+                    <div class="work_illust">
+                        <img src="img/drawWork/penDraw/${item.img}" alt="">
+                    </div>
+                    <div class="text-center">
+                        <h3 class="work_p">${item.title}</h3>
+                        <div class="pink_line">
+
+                        </div>
+                    </div>
+                    
+                </div>`
+        });
+        penDraw.innerHTML=penDrawHtml;
+        console.log()
+
+     // paint
+
+        res.data.paint.forEach(item => {
+            paintHtml+=`<div class="col-12 col-sm-6 col-lg-4 work_item" onclick="window.location='${item.url}';">
+                    <div class="work_illust">
+                        <img src="img/drawWork/paint/${item.img}" alt="">
+                    </div>
+                    <div class="text-center">
+                        <h3 class="work_p">${item.title}</h3>
+                        <div class="pink_line">
+
+                        </div>
+                    </div>
+                    
+                </div>`
+        });
+        paint.innerHTML=paintHtml;
+
+
+
      })
+
+     
 </script>
 
 
 </body>
 
 </html>
+
+
