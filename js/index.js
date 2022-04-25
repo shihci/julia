@@ -50,17 +50,30 @@ let navDoM =document.getElementById("nav");
 
 
         let navList = document.getElementById("navList").children;
-        
+        let webUrl =location.href;
+        function RemoveNavActive(){
+            for(j=0;j<navList.length;j++){
+                navList[j].classList.remove("active")
+            }
+        }
         for(i=0;i<navList.length;i++){
             navList[i].addEventListener("click",(e)=>{
-                for(j=0;j<navList.length;j++){
-                    navList[j].classList.remove("active")
-                }
+                RemoveNavActive()
                 e.target.classList.add("active")
             })
-            
-
         }
+        
+        if(webUrl.indexOf('work_web')!=-1){
+            RemoveNavActive()
+            navList[0].classList.add("active")
+        }else if(webUrl.indexOf('work_illust')!=-1){
+            RemoveNavActive()
+            navList[1].classList.add("active")
+        }else if(webUrl.indexOf('work_draw')!=-1){
+            RemoveNavActive()
+            navList[2].classList.add("active")
+        }
+
 
         let animItem = bodymovin.loadAnimation({
             wrapper: menuBtn,
@@ -111,4 +124,7 @@ let navDoM =document.getElementById("nav");
         
         
     }))
+
+
+    
 

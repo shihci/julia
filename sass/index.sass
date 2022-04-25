@@ -1,7 +1,7 @@
 $dark_red: #CB5454
 $dark_red2: #CD0000
 $red: #E86565
-$pink: #FFB1B1
+pink$: #FFB1B1
 $font-family: "微軟正黑體",Roboto,Helvetica,Arial
 $ft-t1: 21px
 $ft-p1: 15px
@@ -213,6 +213,7 @@ $bg_color: linear-gradient(180deg, rgba(252, 241, 225, 0.8) 0%, rgba(255, 230, 2
             margin-bottom: 40px
             color: white
             cursor: pointer
+            
     
     @media screen and ( min-width: 992px )//這邊
         position: relative
@@ -237,15 +238,16 @@ $bg_color: linear-gradient(180deg, rgba(252, 241, 225, 0.8) 0%, rgba(255, 230, 2
                 margin-left: 16px
                 margin-right: 16px
                 border-radius: 100px
-                color: $red
+                color: ＄pink
                 font-size: 16px
                 margin-top: 0
                 margin-bottom: 0
                 &.active
+                    color: $dark_red
                     background: rgba(255, 238, 238, 0.5)
                     box-shadow: inset 0px 0px 16px rgba(237, 170, 170, 0.4)
                 &:hover
-                    color: $dark_red2
+                    color: $red
 
     @media screen and ( max-width: 992px )
         display: none
