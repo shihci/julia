@@ -58,27 +58,28 @@
     let PageHtml="";
     let url1 =location.href;
     let temp1 =url1.split("?"); 
-    console.log(temp1)
-    axios.get('./api/webIllustPage.json').then(res=>{
+
+    axios.get('./api/webGraphicPage.json').then(res=>{
         console.log(res.data)
-        let pageFn=res.data.project.filter(item => {
+        let pageFn=res.data.webGraphic.find(item => {
             return item.id===temp1[1];
             
         });
+
         PageHtml+=`<div class="row">
             <div class="col-2D-pict">
-                <img src="img/${pageFn[0].img}" alt="">
+                <img src="img/Graphic/${pageFn.img}" alt="">
             </div>
             <div class="col-2d-context">
-                <h2>${pageFn[0].title}</h2>
+                <h2>${pageFn.title}</h2>
                 <p>
-                    ${pageFn[0].content}
+                    ${pageFn.content}
                 </p>
-                <a href="#">網站連結</a>
+                <a href="${pageFn.url}">網站連結</a>
             </div>
        
         </div>`
-        console.log(pageFn);
+
         Page.innerHTML=PageHtml;
 
 

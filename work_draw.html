@@ -64,13 +64,32 @@
             </div>
         </div>
         
-
-
     </div>
 
     <div id="footer">
         Copyright © 2022 Julia. All rights reserved
     </div>
+
+
+    <div id="hippoDemo"></div>
+    <div id="penDrawDemo"></div>
+    <div id="paintDemo"></div>
+
+    <!-- <div id="webdraw1" class="Card" >
+        <img src="img/close.svg" alt="" onclick="closeCard(webdraw1);" class="CardClose">
+        <div class="card_row">
+            <div class="CardLargeImg">
+                <img src="img/test1/iEstateWebCover.jpg" alt="">
+            </div>
+            <div class="CardTitle">
+                <h3>我是標題</h3>
+            </div>
+        </div>
+
+    </div> -->
+
+    
+
 </body>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
     crossorigin="anonymous"></script>
@@ -79,21 +98,40 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.6.5/lottie.min.js"></script>
 <script src="js/index.js"></script>
 <script>
-
+    
+    
+    function closeCard(del) {
+        let  closeId=document.getElementById(del)
+		if (closeId.classList.contains("show")) {
+			closeId.classList.remove("show");
+		}
+        
+	}
+    
     //hippo
     let hippo =document.getElementById("hippo");
     let hippoHtml="";
+    let hippoDemo =document.getElementById("hippoDemo");
+    let hippoDemoHtml="";
     let penDraw =document.getElementById("penDraw");
     let penDrawHtml="";
+    let penDrawDemo =document.getElementById("penDrawDemo")
+    let penDrawDemoHtml="";
     let paint =document.getElementById("paint");
     let paintHtml="";
+    let paintDemo =document.getElementById("paintDemo");
+    let paintDemoHtml="";
     
      axios.get('./api/webDraw.json').then(res=>{
         console.log(res.data)
+
+        
+
         res.data.hippo.forEach(item => {
-            hippoHtml+=`<div class="col-12 col-sm-6 col-lg-4 work_item" onclick="window.location='${item.url}';">
+            //onclick="openCard('${item.id}'); 
+            hippoHtml+=`<div class="col-12 col-sm-6 col-lg-4 work_item"  data-bs-toggle="collapse" data-bs-target="#${item.id}">
                     <div class="work_illust">
-                        <img src="img/drawWork/hippo/${item.img}" alt="">
+                        <img src="img/drawWork/${item.img}" alt="">
                     </div>
                     <div class="text-center">
                         <h3 class="work_p">${item.title}</h3>
@@ -102,16 +140,35 @@
                         </div>
                     </div>
                     
-                </div>`
+                </div>`;
+            hippoDemoHtml+=`
+                <div id="${item.id}" class="Card collapse" >
+                    <img src="img/close.svg" alt="" onclick="closeCard('${item.id}');" class="CardClose">
+                    <div class="card_row">
+                        <div class="CardLargeImg">
+                            <img src="img/drawWork/${item.img}" alt="">
+                        </div>
+                        <div class="CardTitle">
+                            <h3>${item.title}</h3>
+                        </div>
+                    </div>
+
+                </div>
+                
+            `
+            
         });
         hippo.innerHTML=hippoHtml;
+        hippoDemo.innerHTML=hippoDemoHtml;
+        
 
+        
     //penDraw
     
         res.data.penDraw.forEach(item => {
-            penDrawHtml+=`<div class="col-12 col-sm-6 col-lg-4 work_item" onclick="window.location='${item.url}';">
+            penDrawHtml+=`<div class="col-12 col-sm-6 col-lg-4 work_item"  data-bs-toggle="collapse" data-bs-target="#${item.id}">
                     <div class="work_illust">
-                        <img src="img/drawWork/penDraw/${item.img}" alt="">
+                        <img src="img/drawWork/${item.img}" alt="">
                     </div>
                     <div class="text-center">
                         <h3 class="work_p">${item.title}</h3>
@@ -121,16 +178,33 @@
                     </div>
                     
                 </div>`
+
+            penDrawDemoHtml+=`
+                <div id="${item.id}" class="Card collapse" >
+                    <img src="img/close.svg" alt="" onclick="closeCard('${item.id}');" class="CardClose">
+                    <div class="card_row">
+                        <div class="CardLargeImg">
+                            <img src="img/drawWork/${item.img}" alt="">
+                        </div>
+                        <div class="CardTitle">
+                            <h3>${item.title}</h3>
+                        </div>
+                    </div>
+
+                </div>
+                
+            `
         });
         penDraw.innerHTML=penDrawHtml;
-        console.log()
+        penDrawDemo.innerHTML=penDrawDemoHtml;
+  
 
      // paint
 
         res.data.paint.forEach(item => {
-            paintHtml+=`<div class="col-12 col-sm-6 col-lg-4 work_item" onclick="window.location='${item.url}';">
+            paintHtml+=`<div class="col-12 col-sm-6 col-lg-4 work_item"  data-bs-toggle="collapse" data-bs-target="#${item.id}">
                     <div class="work_illust">
-                        <img src="img/drawWork/paint/${item.img}" alt="">
+                        <img src="img/drawWork/${item.img}" alt="">
                     </div>
                     <div class="text-center">
                         <h3 class="work_p">${item.title}</h3>
@@ -140,8 +214,24 @@
                     </div>
                     
                 </div>`
+            paintDemoHtml+=`
+                <div id="${item.id}" class="Card collapse" >
+                    <img src="img/close.svg" alt="" onclick="closeCard('${item.id}');" class="CardClose">
+                    <div class="card_row">
+                        <div class="CardLargeImg">
+                            <img src="img/drawWork/${item.img}" alt="">
+                        </div>
+                        <div class="CardTitle">
+                            <h3>${item.title}</h3>
+                        </div>
+                    </div>
+
+                </div>
+                
+            `
         });
         paint.innerHTML=paintHtml;
+        paintDemo.innerHTML=paintDemoHtml;
 
 
 

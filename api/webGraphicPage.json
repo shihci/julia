@@ -1,0 +1,90 @@
+{
+    "webGraphic":[
+            {
+                "id": "graphic1",
+                "title": "BNI 識別設計",
+                "img":"introduction/BNIDesignGuidlineIntroduction.jpg",
+                "content": "<p>【品牌】<br>BNI成立於1985年，是一家全球性且經過驗證的商業網絡組織。 我們的會員都是專業的商務人士，他們經由對我們的主要核心價值，並幫助彼此發展事業。而『磐鈺分會』隸屬於BNI台中地區的分會之一，目前會員人數已有60+位，在未來持續擴張會員。</p><p>【設計理念】<br>此次設計規劃將延伸品牌LOGO與主色系結合至網頁，讓商務類型的網站也可以與設計風格做結合。</p>",
+                "url": ""
+            },
+            {
+                "id": "graphic2",
+                "title": "博群商務法律",
+                "img":"introduction/ProgroupIntroduction.jpg",
+                "content": "<p>【品牌】<br>博群商務律師事務所位於台中七期黃金地段 ，客戶事務所較多接洽為商務法律諮詢之相關業務，相較於訴訟官司是叫不樂見的情境。此次品牌訴求將不採用關於“法律”、“律師”、“訴訟” 相關等元素。</p><p>【設計理念】<br>這次發想運用“書本”結合“公司”意象，代表企業顧問將運用專業知識（書）為客戶（公司）提供全方位法律諮詢服務並解決客戶對於法律的疑難雜症。</p>",
+                "url": ""
+            },
+            {
+                "id": "graphic3",
+                "title": "天玉堂-二郎神",
+                "img":"introduction/ErlangGodIntroduction.jpg",
+                "content": "<p>此次設計突破傳統風格，採用“藍”與“橘”具代表性公廟色彩與插畫結合，讓現代設計風格與傳統公廟風格做出差差異化。</p>",
+                "url": ""
+            },
+       
+
+            {
+                "id": "graphic4",
+                "title": "喜帖設計",
+                "img":"introduction/WeddingIntroduction.jpg",
+                "content": "",
+                "url": ""
+            },
+            {
+                "id": "graphic5",
+                "title": "木雕工藝坊",
+                "img":"introduction/WoodcarvingCardIntroduction.jpg",
+                "content": "",
+                
+                "url": ""
+            },
+            {
+                "id": "graphic6",
+                "title": "小賀老師",
+                "img":"introduction/Mr.HeIntroduction.jpg",
+                "content": "",
+                "url": ""
+            }
+            ],
+
+            
+    "WebData":[
+        {
+            "id": "web1",
+            "title": "iEstate土斯債權｜不動產P2P借貸媒合平台",
+            "img":"introduction/iestaeWebintroduction.jpg",
+            "content": "<p>【 負責事項 】<br>⊡ 與客戶溝通確認需求<br>⊡ 撰寫需求文件<br>⊡ User Flow規劃<br>⊡ Mockup<br>⊡ 後台參與規<br>⊡ 功能測試並撰寫修改文件列表</p>",
+            "url": "<a href='https://iestate.tech/'>網站連結</a>"
+        },
+        {
+            "id": "web2",
+            "title": "鎮瀾宮官網",
+            "img":"introduction/templeWebintroduction.jpg",
+            "content": "<p>【設計理念】<br>鎮瀾宮為全台指標性媽祖宮廟，而媽祖創造文化、凝結民族的中心體以及帶給眾生心靈上的依託。此次鎮瀾宮公廟網頁企劃，將以「信仰文化」以及「與神明連結」為主軸貫穿網站，透過現代科技結合傳統文化，隨著變遷推陳出新，讓信仰文化在科技之洪流得以持續流傳永遠。此次網頁設計架構核心將以「宮廟文化」為目標導向，最主要核心內容為 ：<br>1.與神明對話<br>2.廟宇與媽祖文化<br>網頁上將規劃「線上擲筊」，透過3D技術打破傳統2D平面動畫，提供更高的擬真度進而帶讓信眾可以融入當下情境。而平臺最大的優勢是可以克服距離與時間上的不便因素，隨時隨地與神明進行交流與溝通，讓祭拜這項傳統文化可以更加普及。</p><p>【視覺風格】<br>此次網頁視覺風格將分為兩部分，「色彩計畫」以及「造型風格」<br>➤色彩計畫<br>媽祖宮廟文化已有百年歷史，每間宮廟建築與裝飾色彩都遂處可見「金色」色彩之元素。而金色除了帶給信眾莊嚴嚴肅，亦有慈悲靜心之感。此次網頁將運用金色為主色系 色號為●＃C5A361➤造型風格<br>「廟宇」為東方的民間信仰，所以大量運用東方之元素，例：水墨、山雲、符號，以及代媽祖表性元素「海」，民俗傳統結合現代設計風格，突破既有台灣大眾宮廟之風格。現代設計風格將吸引更多年輕人來本平台使用，進而透過曝光來達到行銷之效益。</p>",
+            "url": "<a href=''>開發中，盡請期待</a>"
+        },
+        {
+            "id": "web3",
+            "title": "律師官網",
+            "img":"introduction/ProgroupWebintrduction.jpg",
+            "content": "<p>此次設計風格客戶希望走向為活潑與創意，將結合較多動畫效果，與一般制式化律師官網做出風格上的差異化。</p><p>【設計理念】<br>Landing page構想：這社會就像一座小島，只要有兩人以上的人在這座小島上，就會有所謂的“規則”來規範這個世界，而規則就是現實世界的“法律”，如何調解或讓人理解規則並是博群事務所所能提供之服務。</p>",
+            "url": "<a href='http://progroup.law/'>網站連結</a>"
+        },
+        {
+            "id": "web4",
+            "title": "BNI官網",
+            "img":"introduction/BNIWebIntroduction.jpg",
+            "content": "<p>【品牌】<br>BNI成立於1985年，是一家全球性且經過驗證的商業網絡組織。 我們的會員都是專業的商務人士，他們經由對我們的主要核心價值，並幫助彼此發展事業。而『磐鈺分會』隸屬於BNI台中地區的分會之一，目前會員人數已有60+位，在未來持續擴張會員。</p><p>【設計理念】<br>此次設計規劃將延伸品牌LOGO與主色系結合至網頁，讓商務類型的網站也可以與設計風格做結合。</p>",
+            "url": "<a href='https://gotoo.co/demo/ruru/panyu/dev/index.html'>網站連結</a>"
+        },
+        {
+            "id": "web5",
+            "title": "搞運彩",
+            "img":"introduction/dosportWebiestaeWebintroduction.jpg",
+            "content": "<p>搞運彩提供了，四種球類運動，20+聯盟，1000+球隊，提供即時對戰資訊、歷史數據、即時比分等完整資訊給使用者作為參考。再透過平臺提供資訊進行預測之動作，若預測取得高勝率就可以成為大神，並開始販售預測資訊。</p><p>網站陽壽已盡</p>",
+            "url": "<a href=''>陽壽已盡</a>"
+        }
+
+    ]
+
+}

@@ -1,7 +1,7 @@
 $dark_red: #CB5454
 $dark_red2: #CD0000
 $red: #E86565
-pink$: #FFB1B1
+$pink: #FFB1B1
 $font-family: "微軟正黑體",Roboto,Helvetica,Arial
 $ft-t1: 21px
 $ft-p1: 15px
@@ -186,6 +186,7 @@ $bg_color: linear-gradient(180deg, rgba(252, 241, 225, 0.8) 0%, rgba(255, 230, 2
     height: 0px
     background-color: transparent
     overflow: hidden
+
     @media screen and ( min-width: 992px )
         position: absolute
         top: 0%
@@ -211,7 +212,7 @@ $bg_color: linear-gradient(180deg, rgba(252, 241, 225, 0.8) 0%, rgba(255, 230, 2
             font-size: 18px
             margin-top: 40px
             margin-bottom: 40px
-            color: white
+            color: #fff
             cursor: pointer
             
     
@@ -238,7 +239,7 @@ $bg_color: linear-gradient(180deg, rgba(252, 241, 225, 0.8) 0%, rgba(255, 230, 2
                 margin-left: 16px
                 margin-right: 16px
                 border-radius: 100px
-                color: ＄pink
+                color: $pink
                 font-size: 16px
                 margin-top: 0
                 margin-bottom: 0
@@ -423,4 +424,80 @@ $bg_color: linear-gradient(180deg, rgba(252, 241, 225, 0.8) 0%, rgba(255, 230, 2
         line-height: 18px
         letter-spacing: 0.2em
         color: white
+    
+//大圖
+.Card
+    position: fixed
+    top: 0
+    left: 0
+    min-height: 100vh
+    min-width: 100%
+    background: rgba(132, 91, 91, 0.7);
+    z-index: 99
+    // display: none
+    // &.open
+    //     display: block
+
+.CardClose
+    position: absolute
+    top: 50px
+    right: 50px
+    cursor: pointer
+    
+.card_row
+    position: absolute
+    width: 100%
+    padding-left: 16px
+    padding-right: 16px
+    top: 50%
+    transform: translateY(-50%)
+    
+    
+    @media screen and ( min-width: 567px )
+        padding-left: 44px
+        padding-right: 44px
+    @media screen and ( min-width: 992px )
+        padding-left: 0
+        padding-right: 0
+        top: 50%
+        left: 50%
+        transform: translate(-50%,-50%)
+        display: inline-block
+        width: 894px
+        div
+            display: inline-block
+        
+
+.CardLargeImg
+    width: 100%
+    aspect-ratio: 1 / 1
+    @media screen and ( min-width: 992px )
+        aspect-ratio: unset
+        width: 540px
+        height: 540px
+        
+    img
+        object-fit: contain
+        width: 100%
+        height: 100%
+.CardTitle
+    width: 100%
+    h3
+        font-size: 16px
+        color: #fff
+        text-align: center
+    @media screen and ( min-width: 567px )
+        h3
+            font-size: 21px
+    @media screen and ( min-width: 992px )
+        width: 680px
+        margin-left: 50px
+        width: 300px
+        vertical-align: top
+        h3
+            text-align: left
+        
+    
+
+
     

@@ -1,38 +1,38 @@
 {
     "project":[
             {
-                "img": "BNICover.jpg",
+                "img": "Graphic/cover/BNICover.jpg",
                 "title": "BNI 識別設計",
-                "id":"graphic1"
+                "id": "graphic1"
             },
               {
-                "img": "ProgroupCover.jpg",
+                "img": "Graphic/cover/ProgroupCover.jpg",
                 "title": "博群商務法律",
-                 "id":"graphic2"
+                "id": "graphic2"
             },
         {
-                "img": "ErlangGodCover.jpg",
+                "img": "Graphic/cover/ErlangGodCover.jpg",
                 "title": "二郎神 周邊設計",
-                 "id":"graphic3"
+                "id": "graphic3"
             }
             
         ],
         "graphic":[
             
              {
-                "img": "WeddingCardCover.jpg",
+                "img": "cover/WeddingCardCover.jpg",
                 "title": "喜帖設計",
-                 "id":"graphic4"
+                "id": "graphic4"
             },
             {
-                "img": "WoodcarvingCardCover.jpg",
+                "img": "cover/WoodcarvingCardCover.jpg",
                 "title": "木雕工藝坊",
-                 "id":"graphic5"
+                "id": "graphic5"
             },
             {
-                "img": "Mr_HeCover.jpg",
+                "img": "cover/Mr_HeCover.jpg",
                 "title": "小賀老師Logo Design",
-                 "id":"graphic6"
+                "id": "graphic6"
             }
             
         ],
@@ -40,14 +40,14 @@
         "graphicCreat":[
             
              {
-                "img": "digitalflower.jpg",
+                "img": "cover/digitalflower.jpg",
                 "title": "數據花",
-                 "id":"graphic7"
+                "id": "graphic7"
             },
             {
-                "img": "mimosapudicaPoster.jpg",
+                "img": "cover/mimosapudicaPoster.jpg",
                 "title": "含羞草",
-                 "id":"graphic8"
+                "id": "graphic8"
             }
             
             

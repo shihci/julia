@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>二郎神-平面設計</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+    <link href="css/index.css" rel="stylesheet">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0YLB2J7V3Y"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-0YLB2J7V3Y');
+    </script>
+</head>
+
+<body>
+     <div class="fixed">
+        <div id="nav">
+        <!--這是導覽列 -->
+        </div>
+    </div>
+    
+    <div class="disign_2D_body container-fluid" id="Page">
+       
+    </div>
+
+    <div id="footer">
+        Copyright © 2022 Julia. All rights reserved
+    </div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
+    crossorigin="anonymous"></script>
+<script src="js/bootstrap.min.js" crossorigin="anonymous"></script>
+<script src="js/axios.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.6.5/lottie.min.js"></script>
+<script src="js/index.js"></script>
+
+<script>
+    let Page = document.getElementById("Page");
+    let PageHtml="";
+    let url1 =location.href;
+    let temp1 =url1.split("?"); 
+
+    axios.get('./api/webGraphicPage.json').then(res=>{
+        console.log(res.data)
+        let pageFn=res.data.WebData.find(item => {
+            return item.id===temp1[1];
+            
+        });
+
+        PageHtml+=`<div class="row">
+            <div class="col-2D-pict">
+                <img src="img/Web/${pageFn.img}" alt="">
+            </div>
+            <div class="col-2d-context">
+                <h2>${pageFn.title}</h2>
+                <p>
+                    ${pageFn.content}
+                </p>
+                <div>${pageFn.url}</div>
+            </div>
+       
+        </div>`
+
+        Page.innerHTML=PageHtml;
+
+
+        
+     })
+    
+</script>
+
+</html>
