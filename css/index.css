@@ -37,6 +37,8 @@
 .mainIndex h2, .mainIndex h3 {
   font-weight: 600;
   color: #CB5454;
+  position: relative;
+  z-index: 2;
 }
 
 .mainIndex h2 {
@@ -125,6 +127,9 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 @media screen and (min-width: 992px) {
@@ -138,6 +143,20 @@
 
 .mainIndex .mainBox > div {
   position: relative;
+}
+
+@media screen and (max-width: 768px) {
+  .mainIndex .mainBox #titleAnim {
+    padding-left: 28px;
+    padding-right: 28px;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .mainIndex .mainBox #titleAnim {
+    padding-left: 56px;
+    padding-right: 56px;
+  }
 }
 
 .mainIndex .mainBox .cloud4, .mainIndex .mainBox .cloud5 {
@@ -178,6 +197,20 @@
   }
 }
 
+.scrollIcon {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  -webkit-transform: translate(-50%, 0%);
+          transform: translate(-50%, 0%);
+  z-index: 2;
+}
+
+.scrollIcon div {
+  text-align: center;
+  color: #fff;
+}
+
 .FatGirlImg {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -191,11 +224,16 @@
   -webkit-box-align: end;
       -ms-flex-align: end;
           align-items: flex-end;
+  overflow: hidden;
+  padding: 0;
+  margin-left: -4px;
+  margin-right: -4px;
 }
 
 @media screen and (min-width: 992px) {
   .FatGirlImg {
     height: calc(100vh - 60px);
+    overflow: visible;
   }
 }
 
@@ -203,24 +241,30 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  height: 60vh;
+  height: 65vh;
+}
+
+@media screen and (min-width: 400px) {
+  .FatGirlImg img {
+    height: 70vh;
+  }
 }
 
 @media screen and (min-width: 576px) {
   .FatGirlImg img {
-    height: 60vh;
+    height: 70vh;
   }
 }
 
-@media screen and (min-width: 769px) {
+@media screen and (min-width: 768px) {
   .FatGirlImg img {
-    height: 65vh;
+    height: 75vh;
   }
 }
 
 @media screen and (min-width: 992px) {
   .FatGirlImg img {
-    height: 85%;
+    height: 95vh;
   }
 }
 
@@ -300,7 +344,7 @@
   margin: 0;
 }
 
-.col-70PA .resumeTitle::before {
+.col-70PA .resumeTitle:before {
   content: "";
   position: absolute;
   z-index: -1;
@@ -445,6 +489,22 @@
   }
 }
 
+.skill-pict {
+  width: 100%;
+}
+
+@media screen and (min-width: 576px) {
+  .skill-pict {
+    width: 80%;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .skill-pict {
+    width: 60%;
+  }
+}
+
 .work_container {
   width: 100%;
   margin-right: auto;
@@ -463,6 +523,12 @@
 @media screen and (min-width: 1280px) {
   .work_container {
     max-width: 1120px;
+    padding: 0;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .work_container.indexMain {
     padding: 0;
   }
 }
@@ -637,15 +703,29 @@
   background: linear-gradient(90deg, #FFD597 -1.6%, #F7B6AE 100%);
 }
 
+.logo_bar {
+  width: 100%;
+  padding-top: 4px;
+  margin-top: -8px;
+  text-align: center;
+  display: block !important;
+}
+
+.logo_bar h1 {
+  background-image: url(../img/logo.png);
+  text-indent: 101%;
+  width: 216px;
+  height: 50px;
+  white-space: nowrap;
+  overflow: hidden;
+  display: inline-block;
+  margin-bottom: 0;
+}
+
 @media screen and (max-width: 992px) {
   .logo_bar {
     background: -webkit-gradient(linear, left top, left bottom, from(#FFFFFF), to(rgba(255, 255, 255, 0.6)));
     background: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0.6) 100%);
-    width: 100%;
-    padding-top: 4px;
-    margin-top: -8px;
-    text-align: center;
-    display: block !important;
     -webkit-box-shadow: 0px 4px 30px rgba(232, 165, 165, 0.4);
             box-shadow: 0px 4px 30px rgba(232, 165, 165, 0.4);
   }
@@ -1060,6 +1140,7 @@
   line-height: 18px;
   letter-spacing: 0.2em;
   color: white;
+  display: inline-block;
 }
 
 .Card {
@@ -1161,5 +1242,18 @@
   .CardTitle h3 {
     text-align: left;
   }
+}
+
+.por {
+  position: relative;
+}
+
+#templeVideo {
+  position: absolute;
+  top: 50%;
+  left: 52.5%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  width: 42%;
 }
 /*# sourceMappingURL=index.css.map */
