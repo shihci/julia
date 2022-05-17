@@ -30,7 +30,7 @@
        
     </div>
 
-    <div id="footer">
+    <div id="footer" class="fixedFooter">
         Copyright © 2022 Julia. All rights reserved
     </div>
 </body>
@@ -59,8 +59,11 @@
 
         PageHtml+=`<div class="row">
             <div class="col-2D-pict">
-                <div class="por">${pageFn.video}</div>
-                <img src="img/Web/${pageFn.img}" alt="">
+                <div style="height:auto">
+                    <div class="por">${pageFn.video}</div>
+                    <img src="img/Web/${pageFn.img}" alt="">
+                </div>
+                
             </div>
             <div class="col-2d-context">
                 <h2>${pageFn.title}</h2>
