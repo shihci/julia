@@ -1,0 +1,57 @@
+{
+    "project":[
+            {
+                "img": "Graphic/cover/BNICover.jpg",
+                "title": "BNI 識別設計",
+                "id": "graphic1"
+            },
+              {
+                "img": "Graphic/cover/ProgroupCover.jpg",
+                "title": "博群商務法律",
+                "id": "graphic2"
+            },
+        {
+                "img": "Graphic/cover/ErlangGodCover.jpg",
+                "title": "二郎神 周邊設計",
+                "id": "graphic3"
+            }
+            
+        ],
+        "graphic":[
+            
+             {
+                "img": "cover/WeddingCardCover.jpg",
+                "title": "喜帖設計",
+                "id": "graphic4"
+            },
+            {
+                "img": "cover/WoodcarvingCardCover.jpg",
+                "title": "木雕工藝坊",
+                "id": "graphic5"
+            },
+            {
+                "img": "cover/Mr_HeCover.jpg",
+                "title": "小賀老師Logo Design",
+                "id": "graphic6"
+            }
+            
+        ],
+
+        "graphicCreat":[
+            
+             {
+                "img": "cover/digitalflower.jpg",
+                "title": "數據花",
+                "id": "graphic7"
+            },
+            {
+                "img": "cover/mimosapudicaPoster.jpg",
+                "title": "含羞草",
+                "id": "graphic8"
+            }
+            
+            
+        ]
+
+
+}

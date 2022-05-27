@@ -1127,6 +1127,8 @@
     width: 420px;
     padding-top: 110px;
     height: calc(100vh - 55px);
+    position: fixed;
+    right: 0;
   }
 }
 
